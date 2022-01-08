@@ -1,0 +1,100 @@
+.fact{
+    background-image: url('../../images/fact-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &-main{
+        --columns: 4;
+        padding: 100px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-top{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+    &-col{
+        width: calc(100% / var(--columns));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:not(:last-child){
+            border-right: 1px solid $light-yellow;
+        }
+    }
+    &-icon{
+        width: 103px;
+        height: 103px;
+        background-color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--spacing);
+    }
+    &-number{
+        font-size: 50px;
+        line-height: lineH(50, 36);
+        color: $white;
+        font-weight: bold;
+    }
+    &-caption{
+        font-size: 18px;
+        line-height: lineH(36, 18);
+        color: $white;
+    }
+    &-bottom{
+        --columns: 3;
+        right: 15px;
+        height: 85px;
+        background-color: $black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-block{
+        width: calc(100% / var(--columns));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-weight: bold;
+        &.white{
+            background-color: $white;
+            color: $black;
+        }
+        &.brown{
+            background-color: $black-brown;
+        }
+    }
+    @include maxw(1023px){
+        &-main{
+            --columns: 2;
+        }
+        &-col{
+            &:not(:last-child){
+                border-right: none;
+            }
+            &:nth-child(1), &:nth-child(2){
+                margin-bottom: var(--spacing);
+            }
+        }
+    }
+    @include maxw(767px){
+        &-main{
+            --columns: 1;
+        }
+        &-col{
+            &:not(:last-child){
+                margin-bottom: var(--spacing);
+            }
+        }
+        &-bottom{
+            --columns: 1;
+            height: auto;
+        }
+        &-block{
+            padding: 15px 0;
+        }
+    }
+}

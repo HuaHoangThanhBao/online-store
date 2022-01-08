@@ -108,3 +108,6 @@ dist
 
 # Ignore node environment configuration file
 /node/nodemon.json
+
+# Ignore all css file inside folder of template (template/styles/css/)
+/template/styles/css/*

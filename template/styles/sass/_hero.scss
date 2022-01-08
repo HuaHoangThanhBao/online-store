@@ -1,0 +1,124 @@
+.hero {
+    height: 800px;
+    background-image: url("../../images/hero.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.blog{
+        height: 370px;
+        background-image: url("../../images/banner.png");
+    }
+    &-main {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    &-col {
+        &:first-child {
+            width: calc(100% - 190px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        &:last-child {
+            width: 190px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            &.breadcum{
+                justify-content: flex-end;
+            }
+        }
+    }
+    &-heading {
+        max-width: 700px;
+        color: $white;
+        font-size: 80px;
+        line-height: lineH(90, 80);
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    &-row {
+        display: flex;
+        align-items: center;
+        & > i {
+            color: $yellow;
+            font-size: 12px;
+            margin-right: 12px;
+        }
+    }
+    &-txt{
+        font-size: 20px;
+        line-height: lineH(40, 20);
+        color: $white;
+    }
+    &-btn {
+        margin-top: 40px;
+    }
+    &-arrow {
+        width: 50%;
+        @include size(94px, 84px);
+        font-size: 25px;
+        position: relative;
+        i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &.arrow-left {
+            background-color: $yellow;
+            color: $white;
+        }
+        &.arrow-right {
+            background-color: $white;
+            color: $black;
+        }
+    }
+    &-breadcum{
+        padding: 20px var(--spacing);
+        background-color: $yellow;
+        color: $white;
+        font-size: 12px;
+    }
+    @include maxw(1023px) {
+        &-heading {
+            font-size: 60px;
+        }
+        &-txt {
+            font-size: 16px;
+        }
+        &-arrow {
+            padding: 25px;
+        }
+    }
+    @include maxw(767px) {
+        height: auto;
+        &-main{
+            height: 100%;
+        }
+        &-col {
+            &:first-child{
+                width: 100%;
+            }
+            &:last-child{
+                margin: 0;
+                position: absolute;
+                bottom: 0;
+                &.breadcum{
+                    justify-content: flex-start;
+                }
+            }
+        }
+        &-heading {
+            font-size: 40px;
+        }
+        &-txt {
+            font-size: 15px;
+        }
+        &-btn {
+            padding: 25px 50px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.news{
+    padding: 120px 0;
+    @include maxw(1023px) {
+        padding: 50px 0;
+    }
+}
