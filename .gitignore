@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ignore image folder of node (node/uploads)
+/node/uploads
+
+# Ignore node environment configuration file
+/node/nodemon.json
