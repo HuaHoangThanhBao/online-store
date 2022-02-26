@@ -1,0 +1,28 @@
+// @mixin RobotoRegular ($font-size, $line-height: 1.1) {
+//     font-family: 'Roboto Regular';
+//     font-size: $font-size;
+//     line-height: $line-height;
+// }
+
+// @mixin RobotoMedium ($font-size, $line-height: 1.1) {
+//     font-family: 'Roboto Medium';
+//     font-size: $font-size;
+//     line-height: $line-height;
+// }
+
+// @mixin RobotoBold ($font-size, $line-height: 1.1) {
+//     font-family: 'Roboto Bold';
+//     font-size: $font-size;
+//     line-height: $line-height;
+// }
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: quote($font-name);
+      src: url($path+".eot");
+      src: url($path+".eot?#iefix") format("embedded-opentype"), url($path+".woff")
+          format("woff"), url($path+".ttf") format("truetype");
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
